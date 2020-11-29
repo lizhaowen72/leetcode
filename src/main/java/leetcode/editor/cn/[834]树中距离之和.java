@@ -26,16 +26,61 @@ package leetcode.editor.cn;
 // Related Topics 树 深度优先搜索 
 // 👍 236 👎 0
 
-class SumOfDistancesInTree{
+import java.util.ArrayList;
+import java.util.HashSet;
+
+class SumOfDistancesInTree {
     public static void main(String[] args) {
-         Solution solution = new SumOfDistancesInTree().new Solution();
+        Solution solution = new SumOfDistancesInTree().new Solution();
+        int  N = 6;
+        int[][] edges = {{0,1},{0,2},{2,3},{2,4},{2,5}};
     }
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] sumOfDistancesInTree(int N, int[][] edges) {
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        int[] res, count;
+        ArrayList<HashSet<Integer>> tree;
+
+        public int[] sumOfDistancesInTree(int N, int[][] edges) {
+            tree = new ArrayList<HashSet<Integer>>();
+            res = new int[N];
+            count = new int[N];
+            for (int i = 0; i < N; i++) {
+                tree.add(new HashSet<Integer>());
+            }
+            for (int[] edge : edges) {
+                tree.get(edge[0]).add(edge[1]);
+                tree.get(edge[1]).add(edge[0]);
+            }
+            dfs(0, -1);
+            dfs2(0, -1);
+            return res;
+        }
+
+        public void dfs(int root, int pre) {
+            for (int i : tree.get(root)) {
+                if (i == pre) {
+                    continue;
+                }
+                dfs(i, root);
+                count[root] += count[i];
+                res[root] += res[i] + count[i];
+            }
+            count[root]++;
+        }
+
+        public void dfs2(int root, int pre) {
+            for (int i : tree.get(root)) {
+                if (i == pre) {
+                    continue;
+                }
+                res[i] = res[root] - count[i] + count.length - count[i];
+                dfs2(i, root);
+            }
+        }
+
 
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

@@ -53,7 +53,7 @@ import java.util.*;
 class SimplifyPath {
     public static void main(String[] args) {
         Solution solution = new SimplifyPath().new Solution();
-        solution.simplifyPath("/home//foo/");
+        solution.simplifyPath("/a/./b/../../c/");
     }
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
