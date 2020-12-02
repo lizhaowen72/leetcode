@@ -27,6 +27,7 @@ package leetcode.editor.cn;
 class ReverseInteger{
     public static void main(String[] args) {
          Solution solution = new ReverseInteger().new Solution();
+         solution.reverse(-12);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
