@@ -70,23 +70,19 @@ class BinaryTreeZigzagLevelOrderTraversal {
                 List<Integer> subRes = new ArrayList<>();
                 int size = queue.size();
                 for (int i = 0; i < size; i++) {
-                    if (level % 2 == 0) {
-                        if (queue.peek().right != null) {
-                            queue.add(queue.peek().right);
-                        }
-                        if (queue.peek().left != null) {
-                            queue.add(queue.peek().left);
-                        }
-                    }else{
-                        if (queue.peek().left != null) {
-                            queue.add(queue.peek().left);
-                        }
-                        if (queue.peek().right != null) {
-                            queue.add(queue.peek().right);
-                        }
 
+                    if (queue.peek().right != null) {
+                        queue.add(queue.peek().right);
                     }
-                    subRes.add(queue.poll().val);
+                    if (queue.peek().left != null) {
+                        queue.add(queue.peek().left);
+                    }
+                    if(level%2==0){
+                        subRes.add(0,queue.poll().val);
+                    }else{
+                        subRes.add(queue.poll().val);
+                    }
+
                 }
                 res.add(subRes);
                 level++;
