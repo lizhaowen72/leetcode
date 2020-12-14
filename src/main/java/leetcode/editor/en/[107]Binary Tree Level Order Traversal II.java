@@ -28,50 +28,51 @@ package leetcode.editor.en;
 import java.util.ArrayList;
 import java.util.List;
 
-class BinaryTreeLevelOrderTraversalIi{
-      public static void main(String[] args) {
-           Solution solution = new BinaryTreeLevelOrderTraversalIi().new Solution();
-      }
-      //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-class Solution {
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
-        List<List<TreeNode>> res = new ArrayList<>();
-        return null;
+class BinaryTreeLevelOrderTraversalIi {
+    public static void main(String[] args) {
+        Solution solution = new BinaryTreeLevelOrderTraversalIi().new Solution();
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
-static class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+    //leetcode submit region begin(Prohibit modification and deletion)
 
-    TreeNode() {
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     * int val;
+     * TreeNode left;
+     * TreeNode right;
+     * TreeNode() {}
+     * TreeNode(int val) { this.val = val; }
+     * TreeNode(int val, TreeNode left, TreeNode right) {
+     * this.val = val;
+     * this.left = left;
+     * this.right = right;
+     * }
+     * }
+     */
+    class Solution {
+        public List<List<Integer>> levelOrderBottom(TreeNode root) {
+            List<List<TreeNode>> res = new ArrayList<>();
+            return null;
+        }
     }
 
-    TreeNode(int val) {
-        this.val = val;
-    }
+    //leetcode submit region end(Prohibit modification and deletion)
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
 
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
+        TreeNode() {
+        }
 
-}
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 }
